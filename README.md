@@ -1,5 +1,9 @@
 # Next.js + Vercel + AWS DynamoDB 极简动态博客
 
+## 在线演示
+
+已部署地址：https://blog-ssr-tawny.vercel.app/
+
 ## 方案说明
 
 - 使用 Next.js 实现服务端渲染（SSR），页面内容实时从 AWS DynamoDB 获取。
@@ -145,3 +149,38 @@
 ---
 
 如需进一步自定义或遇到问题，欢迎随时提问！ 
+
+---
+
+## Vercel 部署步骤
+
+1. **推送代码到 GitHub**
+   - 确保你的项目已上传到 GitHub 仓库。
+
+2. **注册并登录 Vercel**
+   - 访问 https://vercel.com/，用 GitHub 账号注册并登录。
+
+3. **新建 Vercel 项目**
+   - 点击 “Add New” → “Project”，选择你的 blog-clean 仓库，点击“Import”。
+
+4. **配置环境变量**
+   - 在 Vercel 项目设置 → Environment Variables，添加：
+     - `AWS_REGION`
+     - `AWS_ACCESS_KEY_ID`
+     - `AWS_SECRET_ACCESS_KEY`
+     - `DYNAMODB_TABLE`
+   - 值与本地 .env 保持一致。
+
+5. **自动检测 Next.js 并部署**
+   - Vercel 会自动识别 Next.js 项目，无需手动设置构建命令。
+   - 点击“Deploy”按钮，等待自动部署完成。
+
+6. **访问你的博客**
+   - 部署完成后，Vercel 会分配一个 *.vercel.app 域名（如 https://blog-ssr-tawny.vercel.app/）。
+   - 可在 Vercel 控制台绑定自定义域名。
+
+7. **后续管理**
+   - 推送新代码到 GitHub，Vercel 会自动重新部署。
+   - 可在 Vercel 控制台管理环境变量、域名、部署历史等。
+
+--- 
